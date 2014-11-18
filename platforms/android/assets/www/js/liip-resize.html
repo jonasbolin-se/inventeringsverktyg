@@ -1,0 +1,23 @@
+<html>
+<head>
+
+</head>
+<body>
+<form id="form" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+	<input id="fileinput" data-maxwidth="300" data-maxheight="300" type="file" name="file[]" multiple/>
+</form>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="js/resize.js"></script>
+<script>
+
+$(#fileinput).change(function(){
+	console.log("change");
+});
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+2014-11-17 22:14:03.564 1Inventeringsverktyg[9957:750921] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/jonasbolin/Library/Developer/CoreSimulator/Devices/9CA31676-B8E1-456A-AB7D-2C0DCE459B5E/data/Containers/Data/Application/0758A5C6-5DF6-4226-9B89-135E53910102/Library/Cookies/Cookies.binarycookies
+2014-11-17 22:14:03.957 1Inventeringsverktyg[9957:750921] Apache Cordova native platform version 3.6.3 is starting.
+2014-11-17 22:14:03.957 1Inventeringsverktyg[9957:750921] Multi-tasking -> Device: YES, App: YES
+2014-11-17 22:14:03.963 1Inventeringsverktyg[9957:750921] Unlimited access to network resources
+2014-11-17 22:14:03.981 1Inventeringsverktyg[9957:750921] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+
+2014-11-17 22:14:05.028 1Inventeringsverktyg[9957:750921] Resetting plugins due to page load.
+2014-11-17 22:14:05.637 1Inventeringsverktyg[9957:750921] Finished load of: file:///Users/jonasbolin/Library/Developer/CoreSimulator/Devices/9CA31676-B8E1-456A-AB7D-2C0DCE459B5E/data/Containers/Bundle/Application/4B6BD737-18E4-4765-A2F8-3BDD3A4E6B80/1Inventeringsverktyg.app/www/index.html
+2014-11-17 22:14:24.369 1Inventeringsverktyg[9957:750921] Satos checklist
+2014-11-17 22:14:33.547 1Inventeringsverktyg[9957:750921] Camera.getPicture: source type 1 not available.
+2014-11-17 22:14:35.321 1Inventeringsverktyg[9957:750921] THREAD WARNING: ['Camera'] took '1775.015137' ms. Plugin should use a background thread.
+2014-11-17 22:14:37.483 1Inventeringsverktyg[9957:750921] 4877932602327040
+2014-11-17 22:14:37.483 1Inventeringsverktyg[9957:750921] {"form_id":"4877932602327040","form_name":"Satos checklist","submitted_entry":{"4913469698605056":"Testo","form_id":"4877932602327040","form_name":"Satos checklist"},"timestamp":1416258877479}
