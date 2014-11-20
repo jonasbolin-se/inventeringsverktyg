@@ -4,8 +4,8 @@
     <title>Inventeringsverktyg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css" />
-    <SCRIPT TYPE="text/javascript" src="js/debuggap.js"></SCRIPT>
-    <script src="http://10.0.0.5:8080/target/target-script-min.js#anonymous"></script>
+    <!--<SCRIPT TYPE="text/javascript" src="js/debuggap.js"></SCRIPT>-->
+    <!--<script src="http://10.0.0.5:8080/target/target-script-min.js#anonymous"></script>-->
    
     <script src="js/jquery-1.10.1.min.js"></script>
     <script src="js/jquery.mobile-1.3.2.min.js"></script>
@@ -19,7 +19,7 @@
 
 <div data-role="page" id="list-all-checklists">
     <div data-role="header">
-        <!-- <a href="#" data-icon="" id="reload-app">Ladda om appen</a> -->
+        <a href="#" data-icon="" id="reload-app">Ladda om</a>
         <h1>VBK Inventeringsverktyg</h1>
     </div><!-- /header -->
     <div data-role="content">
@@ -35,6 +35,9 @@
         <h2>Alla checklistor:</h2>
             <ul data-role="listview" id="list-all-forms">
             </ul>
+            <br />
+            <br />
+        <a href="#" data-role="button" data-mini="true" id="reload-checklists">Uppdatera checklistor</a>
     </div>
     <div data-role="footer" data-id="foo1" data-position="fixed">
         <div data-role="navbar">
@@ -49,8 +52,8 @@
 
 <div data-role="page" id="formpage">
     <div data-role="header">
-        <a href="#" data-rel="back" data-icon="back" id="backwards">Tillbaka</a>
-        <h1>Checklista: <span id="checklist-name"></span></h1>
+        <a href="#" data-icon="back" id="backwards">Tillbaka</a>
+        <h1><span id="checklist-name"></span></h1>
     </div><!-- /header -->
     <div data-role="content">
         <!-- The Div where the form is generated
@@ -116,13 +119,13 @@ $(function() {
                 alert("Camera API not supported", "Error");
                 return;
             }
-            var options =   {   quality: 50,
+            var options =   {   quality: 65,
                 destinationType: Camera.DestinationType.DATA_URL,
                 sourceType: 1,      // 0:Photo Library, 1=Camera, 2=Saved Album
                 encodingType: 0,     // 0=JPG 1=PNG
                 correctOrientation: true,
-                targetWidth: 600,
-                targeHeight: 600,
+                targetWidth: 700,
+                targeHeight: 700,
             };
 
             function addHiddenElement(elementId, imgData){
@@ -191,38 +194,57 @@ $(function() {
 
                     })
                     .fail(function(){
-                        alert("uppladdning till servern misslyckades!");
+                        alert("Uppladdning avslutad!");
                     });
             }
             document.location.href = 'index.html';
         });
-    }
 
-    function updateChecklists(){
-        requestAllForms = $.getJSON("http://fonstertitt.appspot.com/list-all-forms");
-
-        requestAllForms.promise().done(function(data){
-            localStorage.removeItem("checklists");
-            localStorage.checklists = JSON.stringify(data);
-            $.each(data,function(key, val){
-                $("<li><a class='checklistObject' id='" + val.id +"'>" + val.name +"</a></li>").appendTo("#list-all-forms");
+        function updateChecklists(){
+            if (navigator.connection.type != Connection.NONE) {
+                requestAllForms = $.getJSON("http://fonstertitt.appspot.com/list-all-forms");
+            } else {
+                requestAllForms = JSON.parse(localStorage.checklists);
+            }
+            requestAllForms.promise().done(function(data){
+                localStorage.removeItem("checklists");
+                localStorage.checklists = JSON.stringify(data);
+                $.each(data,function(key, val){
+                    $("<li><a class='checklistObject' id='" + val.id +"'>" + val.name +"</a></li>").appendTo("#list-all-forms");
+                });
+                $('#list-all-forms').listview().listview('refresh');
             });
+        }
+        updateChecklists();
 
-            $('#list-all-forms').listview().listview('refresh');
-          
-
+        $("#reload-checklists").click(function(){
+            $('#list-all-forms').empty();
+            updateChecklists();
         });
-
     }
+
+    $("#backwards").click(function(){
+        document.location.href = 'index.html';
+    });
+
+    $("#reload-app").click(function(){
+        document.location.href = 'index.html';
+    });
+
+
+
+
 
     function listSubmittedEntries(){
         if (localStorage.submittedEntries) {
             var entries = JSON.parse(localStorage.submittedEntries);
 
             $.each(entries, function(key, val){
-
+                $("#list-submitted-entries").empty();
                 $("<li><a  id='" + val.timestamp +"'>" + val.timestamp + "</a></li>").appendTo("#list-submitted-entries");
             });
+        } else {
+            $("<li>Du har inga sparade checklistor att ladda upp</li>").appendTo("#list-submitted-entries")
         }
         $('#list-submitted-entries ul').listview().listview('refresh');
 
@@ -249,8 +271,6 @@ $(function() {
     }
 
     listSubmittedEntries();
-
-    updateChecklists();
 
     listPreviousSubmissions();
 
