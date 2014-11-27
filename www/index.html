@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css" />
     <!--<SCRIPT TYPE="text/javascript" src="js/debuggap.js"></SCRIPT>-->
     <!--<script src="http://10.0.0.5:8080/target/target-script-min.js#anonymous"></script>-->
-   
+    <script src="http://debug.build.phonegap.com/target/target-script-min.js#codementorjadjoubran"></script>
    
     <script src="js/jquery-1.10.1.min.js"></script>
     <script src="js/jquery.mobile-1.3.2.min.js"></script>
@@ -188,10 +188,15 @@ $(function() {
                 }).done(function(){
                         alert("Checklistan inskickad!");
 
-                    })
-                    .fail(function(){
-                        alert("Uppladdning avslutad!");
-                    });
+                })
+                .fail(function(jqXHR, textStatus, errorThrown){
+                    console.log("upload failed");
+                    console.log(jqXHR);
+                    console.log(textStatus);
+                    console.log(errorThrown);
+                    console.log(jqXHR.responseText);
+                    alert("upload failed!");
+                });
             }
             document.location.href = 'index.html';
         });

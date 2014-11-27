@@ -98,12 +98,6 @@
     </div><!-- /footer -->
 </div>
 
-
-<!--<script src="js/exif.js"></script>  library to find orientation for uploaded images -->
-<!--<script type="text/javascript" src="js/binaryajax.js"></script>  helper library for exif.js -->
-<!--<script src="js/megapix-image.js"></script>  library which resizes images and unsqaush them on iOS -->
-<!--<script src="js/megapix-image.test.js"></script>  includes the functions which gets the image DOM and calls the image resize -->
-
 <script type="text/javascript">
     
 $(function() { 
@@ -195,8 +189,13 @@ $(function() {
                         alert("Checklistan inskickad!");
 
                     })
-                    .fail(function(){
-                        alert("Uppladdning avslutad!");
+                    .fail(function(jqXHR, textStatus, errorThrown){
+                        console.log("upload failed");
+                        console.log(jqXHR);
+                        console.log(textStatus)
+                        console.log(errorThrown);
+                        console.log(jqXHR.responseText);
+                        alert("upload failed!");
                     });
             }
             document.location.href = 'index.html';
