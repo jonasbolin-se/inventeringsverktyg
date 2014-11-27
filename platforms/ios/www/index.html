@@ -178,7 +178,7 @@ $(function() {
                 storeSubmittedEntry(submittedEntryString, formId);
                 //listSubmittedEntries();
             } else {
-
+                console.log(submittedEntryString);
                 $.ajax({
                     type: 'POST',
                     url: "http://fonstertitt.appspot.com/submit",
@@ -188,15 +188,15 @@ $(function() {
                 }).done(function(){
                         alert("Checklistan inskickad!");
 
-                    })
-                    .fail(function(jqXHR, textStatus, errorThrown){
-                        console.log("upload failed");
-                        console.log(jqXHR);
-                        console.log(textStatus)
-                        console.log(errorThrown);
-                        console.log(jqXHR.responseText);
-                        alert("upload failed!");
-                    });
+                })
+                .fail(function(jqXHR, textStatus, errorThrown){
+                    console.log("upload failed");
+                    console.log(jqXHR);
+                    console.log(textStatus);
+                    console.log(errorThrown);
+                    console.log(jqXHR.responseText);
+                    alert("upload failed!");
+                });
             }
             document.location.href = 'index.html';
         });

@@ -178,7 +178,7 @@ $(function() {
                 storeSubmittedEntry(submittedEntryString, formId);
                 //listSubmittedEntries();
             } else {
-
+                console.log(submittedEntryString);
                 $.ajax({
                     type: 'POST',
                     url: "http://fonstertitt.appspot.com/submit",
