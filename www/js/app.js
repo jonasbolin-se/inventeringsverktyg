@@ -259,7 +259,10 @@ function onDeviceReady() {
 		if (navigator.connection.type == Connection.NONE) {
 			alert("Du &auml;r inte uppkopplad. Checklistan kommer sparas i appen s&aring; f&aring;r du ladda upp den senare!");
 			storeSubmittedEntry(submittedEntryString, formId);
-			//listSubmittedEntries();
+			/
+
+
+			/listSubmittedEntries();
 		} else {
 			$.ajax({
 				type: 'POST',
@@ -302,16 +305,20 @@ function onDeviceReady() {
 		}
 	}
 	updateChecklists();
+	
 	$("#reload-checklists").click(function() {
 		$('#list-all-forms').empty();
 		updateChecklists();
 	});
+
 	$("#backwards").click(function() {
 		document.location.href = 'index.html';
 	});
+
 	$("#reload-app").click(function() {
 		document.location.href = 'index.html';
 	});
+
 	listSubmittedEntries();
 	listPreviousSubmissions();
 	$(document).on('click', '.checklistObject', function() {
