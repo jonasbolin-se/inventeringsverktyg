@@ -196,6 +196,9 @@ function uploadSubmittedEntries() {
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
+
+	cordova.exec.setJsToNativeBridgeMode(cordova.exec.jsToNativeModes.XHR_NO_PAYLOAD);
+
 	$(document).on('click', '.camera', function() {
 		if (!navigator.camera) {
 			alert("Camera API not supported", "Error");
@@ -259,10 +262,7 @@ function onDeviceReady() {
 		if (navigator.connection.type == Connection.NONE) {
 			alert("Du &auml;r inte uppkopplad. Checklistan kommer sparas i appen s&aring; f&aring;r du ladda upp den senare!");
 			storeSubmittedEntry(submittedEntryString, formId);
-			/
-
-
-			/listSubmittedEntries();
+			//listSubmittedEntries();
 		} else {
 			$.ajax({
 				type: 'POST',
@@ -305,7 +305,7 @@ function onDeviceReady() {
 		}
 	}
 	updateChecklists();
-	
+
 	$("#reload-checklists").click(function() {
 		$('#list-all-forms').empty();
 		updateChecklists();
