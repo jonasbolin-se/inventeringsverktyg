@@ -176,12 +176,12 @@ function uploadSubmittedEntries() {
 				i++;
 				if (data == val.form_id) {
 					var $el = $("#" + val.timestamp);
-					$("<p>Uppladdningen genomf&ouml;rd!</p>").appendTo($el);
+					$("<p>Uppladdningen lyckades!</p>").appendTo($el);
 					$el.fadeOut(2300, function() {
 						$(this).remove();
 					}); //delete this one to save energy
 					if (i == entries_length) {
-						delete localStorage.submittedEntries;
+						localStorage.removeItem(submittedEntries);
 					}
 				} else {
 					alert("uppladdningen misslyckades!");
@@ -196,6 +196,9 @@ function uploadSubmittedEntries() {
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
+
+	cordova.exec.setJsToNativeBridgeMode(cordova.exec.jsToNativeModes.XHR_NO_PAYLOAD);
+
 	$(document).on('click', '.camera', function() {
 		if (!navigator.camera) {
 			alert("Camera API not supported", "Error");
@@ -302,16 +305,27 @@ function onDeviceReady() {
 		}
 	}
 	updateChecklists();
+
 	$("#reload-checklists").click(function() {
 		$('#list-all-forms').empty();
 		updateChecklists();
 	});
+
 	$("#backwards").click(function() {
 		document.location.href = 'index.html';
 	});
+
 	$("#reload-app").click(function() {
 		document.location.href = 'index.html';
 	});
+
+	$("#remove-previous-submissions").click(function() {
+		localStorage.removeItem(previousSubmissions);
+		document.location.href = 'index.html';
+	});
+
+	
+
 	listSubmittedEntries();
 	listPreviousSubmissions();
 	$(document).on('click', '.checklistObject', function() {
