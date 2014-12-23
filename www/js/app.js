@@ -19,8 +19,8 @@ function listPreviousSubmissions() {
 				return false;
 			}
 			var datetime = new Date(val.timestamp + 3600 * 1000);
-			datetime = datetime.toISOString();
-			$("<li><a id='" + val.form_id + "' class='previousSubmissionObject' name=" + val.timestamp + "><h3>" + val.form_name + "</h3><p>Sparad: " + prettyDate(datetime) + "</p></a></li>").appendTo("#list-all-previous-submissions");
+			datetime = datetime.toJSON().substring(0,16);
+			$("<li><a id='" + val.form_id + "' class='previousSubmissionObject' name=" + val.timestamp + "><h3>" + val.form_name + "</h3><p>Sparad: " + datetime + "</p></a></li>").appendTo("#list-all-previous-submissions");
 			i++;
 		});
 		$('#list-all-previous-submissions').listview().listview('refresh');
@@ -320,7 +320,13 @@ function onDeviceReady() {
 	});
 
 	$("#remove-previous-submissions").click(function() {
-		localStorage.removeItem(previousSubmissions);
+		alert("Nu kommer vi ta bort tidigare sparade formulär?");
+		localStorage.previousSubmissions = "";
+		if (localStorage.previousSubmissions) {
+			console.log("not empty");
+		} else {
+			console.log("empty!");
+		}
 		document.location.href = 'index.html';
 	});
 
