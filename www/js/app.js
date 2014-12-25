@@ -27,6 +27,11 @@ function listPreviousSubmissions() {
 	}
 }
 
+function arrayLengthSubmittedEntries(){
+	var entries = JSON.parse(localStorage.submittedEntries);
+	$("#entries-array-length").html(entries.length); 
+}
+
 function repopulateForm(previousSubmission) {
 	// console.log(previousSubmission);
 	$.each(previousSubmission, function(name, val) {
@@ -264,23 +269,27 @@ function onDeviceReady() {
 			storeSubmittedEntry(submittedEntryString, formId);
 			//listSubmittedEntries();
 		} else {
-			$.ajax({
-				type: 'POST',
-				url: "http://fonstertitt.appspot.com/submit",
-				data: submittedEntryString,
-				crossDomain: true,
-				cache: false
-			}).done(function(data) {
-				console.log(data);
-				alert("Checklistan inskickad!");
-			}).fail(function(jqXHR, textStatus, errorThrown) {
-				console.log("upload failed");
-				console.log(jqXHR);
-				console.log(textStatus);
-				console.log(errorThrown);
-				console.log(jqXHR.responseText);
-				alert("upload failed!");
-			});
+
+			storeSubmittedEntry(submittedEntryString, formId);
+			
+			//uploadSubmittedEntries();
+			// $.ajax({
+			// 	type: 'POST',
+			// 	url: "http://fonstertitt.appspot.com/submit",
+			// 	data: submittedEntryString,
+			// 	crossDomain: true,
+			// 	cache: false
+			// }).done(function(data) {
+			// 	console.log(data);
+			// 	alert("Checklistan inskickad!");
+			// }).fail(function(jqXHR, textStatus, errorThrown) {
+			// 	console.log("upload failed");
+			// 	console.log(jqXHR);
+			// 	console.log(textStatus);
+			// 	console.log(errorThrown);
+			// 	console.log(jqXHR.responseText);
+			// 	alert("upload failed!");
+			// });
 		}
 		document.location.href = 'index.html';
 	});
@@ -365,6 +374,11 @@ function onDeviceReady() {
 	$("#upload-submitted-entries").click(function() {
 		uploadSubmittedEntries();
 	});
+	$("#upload-submitted-entries2").click(function() {
+		uploadSubmittedEntries();
+	});
+
+
 	//Remove uploaded/converted image i.e empty image src, remove hidden base64 image and its name and delete button.
 	$(document).on("click", ".del-image-input", function() {
 		imageId = $(this).attr("id");
