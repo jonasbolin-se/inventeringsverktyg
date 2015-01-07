@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="se.vbk.inventeringsverktyg" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>1Inventeringsverktyg</name>
+<widget id="se.vbk.verktyg" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>1 Inventeringsverktyg</name>
     <description>
         VBK Inventeringsverktyg
     </description>

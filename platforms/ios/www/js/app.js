@@ -8,7 +8,7 @@ function listSubmittedEntries() {
 	} else {
 		$("<li>Du har inga sparade checklistor att ladda upp</li>").appendTo("#list-submitted-entries");
 	}
-	$('#list-submitted-entries ul').listview().listview('refresh');
+	$('#list-submitted-entries').listview().listview('refresh');
 }
 
 function listPreviousSubmissions() {
@@ -26,6 +26,18 @@ function listPreviousSubmissions() {
 		$('#list-all-previous-submissions').listview().listview('refresh');
 	}
 }
+
+function arrayLengthSubmittedEntries(){
+	if (localStorage.submittedEntries){
+		var entries = JSON.parse(localStorage.submittedEntries);
+		if (entries.length > 0) {
+				alert("Du har " + entries.length + "checklistor sparade.");
+				$("#entries-array-length").html(entries.length);
+		}
+	}
+}
+
+arrayLengthSubmittedEntries();
 
 function repopulateForm(previousSubmission) {
 	// console.log(previousSubmission);
@@ -181,7 +193,7 @@ function uploadSubmittedEntries() {
 						$(this).remove();
 					}); //delete this one to save energy
 					if (i == entries_length) {
-						localStorage.removeItem(submittedEntries);
+						localStorage.submittedEntries = "";
 					}
 				} else {
 					alert("uppladdningen misslyckades!");
@@ -191,6 +203,7 @@ function uploadSubmittedEntries() {
 				alert("uppladdningen misslyckades!");
 			});
 		});
+		document.location.href = 'index.html';
 	}
 }
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -266,6 +279,7 @@ function onDeviceReady() {
 		} else {
 
 			storeSubmittedEntry(submittedEntryString, formId);
+			alert("Checklistan sparas nu i appen s&aring; f&aring;r du ladda upp den senare!");
 			//uploadSubmittedEntries();
 			// $.ajax({
 			// 	type: 'POST',
@@ -371,6 +385,8 @@ function onDeviceReady() {
 	$("#upload-submitted-entries2").click(function() {
 		uploadSubmittedEntries();
 	});
+
+
 	//Remove uploaded/converted image i.e empty image src, remove hidden base64 image and its name and delete button.
 	$(document).on("click", ".del-image-input", function() {
 		imageId = $(this).attr("id");
