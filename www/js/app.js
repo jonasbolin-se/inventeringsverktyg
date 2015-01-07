@@ -186,7 +186,7 @@ function uploadSubmittedEntries() {
 			upload.promise().done(function(data) {
 				
 				if (data == val.form_id) {
-					alert(JSON.stringify(data));
+					//alert(JSON.stringify(data));
 					var $el = $("#" + val.timestamp);
 					$("<p>Uppladdningen lyckades!</p>").appendTo($el);
 					$el.fadeOut(2300, function() {
@@ -200,15 +200,15 @@ function uploadSubmittedEntries() {
 					return false;
 				}
 			}).fail(function(data) {
-				//alert("uppladdningen misslyckades!" + JSON.stringify(data));
-				var $el = $("#" + val.timestamp);
-				$("<p>Uppladdningen lyckades!</p>").appendTo($el);
-				$el.fadeOut(2300, function() {
-					$(this).remove();
-				}); //delete this one to save energy
-				if (i == entries_length) {
-					localStorage.submittedEntries = "";
-				}
+				alert("uppladdningen misslyckades!" + JSON.stringify(data));
+				// var $el = $("#" + val.timestamp);
+				// $("<p>Uppladdningen lyckades!</p>").appendTo($el);
+				// $el.fadeOut(2300, function() {
+				// 	$(this).remove();
+				// }); //delete this one to save energy
+				// if (i == entries_length) {
+				// 	localStorage.submittedEntries = "";
+				// }
 			});
 		});
 		//document.location.href = 'index.html';
