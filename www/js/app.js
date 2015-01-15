@@ -220,6 +220,20 @@ function onDeviceReady() {
 
 	cordova.exec.setJsToNativeBridgeMode(cordova.exec.jsToNativeModes.XHR_NO_PAYLOAD);
 
+	function addHiddenElement(elementId, imgData) {
+		$("<input>", {
+			type: "hidden",
+			name: "imagedata" + elementId,
+			id: "imagedata" + elementId,
+			value: "data:image/jpeg;base64," + imgData
+		}).insertAfter("#" + elementId);
+		$("<a>", {
+			class: "del-image-input",
+			href: "#",
+			id: elementId
+		}).html("Ta bort bild").insertAfter("#" + elementId);
+	}
+
 	$(document).on('click', '.camera', function() {
 		if (!navigator.camera) {
 			alert("Camera API not supported", "Error");
@@ -236,20 +250,6 @@ function onDeviceReady() {
 			targetWidth: 700,
 			targetHeight: 700
 		};
-
-		function addHiddenElement(elementId, imgData) {
-			$("<input>", {
-				type: "hidden",
-				name: "imagedata" + elementId,
-				id: "imagedata" + elementId,
-				value: "data:image/jpeg;base64," + imgData
-			}).insertAfter("#" + elementId);
-			$("<a>", {
-				class: "del-image-input",
-				href: "#",
-				id: elementId
-			}).html("Ta bort bild").insertAfter("#" + elementId);
-		}
 
 		function imageData(elementId) {
 			navigator.camera.getPicture(function(imgData) {
