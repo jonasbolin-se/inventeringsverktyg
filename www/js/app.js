@@ -3,7 +3,9 @@ function listSubmittedEntries() {
 		$("#list-submitted-entries").empty();
 		var entries = JSON.parse(localStorage.submittedEntries);
 		$.each(entries, function(key, val) {
-			$("<li><a  id='" + val.timestamp + "'>" + val.timestamp + "</a></li>").appendTo("#list-submitted-entries");
+			var datetime = new Date(val.timestamp + 3600 * 1000);
+			datetime = datetime.toJSON().substring(0,16);
+			$("<li><a  id='" + val.timestamp + "'>Sparad: " + datetime + "</a></li>").appendTo("#list-submitted-entries");
 		});
 	} else {
 		$("<li>Du har inga sparade checklistor att ladda upp</li>").appendTo("#list-submitted-entries");
@@ -31,8 +33,7 @@ function arrayLengthSubmittedEntries(){
 	if (localStorage.submittedEntries){
 		var entries = JSON.parse(localStorage.submittedEntries);
 		if (entries.length > 0) {
-				// alert("Du har " + entries.length + "checklistor sparade.");
-				$("#entries-array-length").html("- Du har " + entries.length + " formul&auml;r att ladda upp!");
+				$("#entries-array-length").html("- Du har " + entries.length + " formul&auml;r att ladda upp.");
 		}
 	}
 }
@@ -201,14 +202,6 @@ function uploadSubmittedEntries() {
 				}
 			}).fail(function(data) {
 				alert("uppladdningen misslyckades!" + JSON.stringify(data));
-				// var $el = $("#" + val.timestamp);
-				// $("<p>Uppladdningen lyckades!</p>").appendTo($el);
-				// $el.fadeOut(2300, function() {
-				// 	$(this).remove();
-				// }); //delete this one to save energy
-				// if (i == entries_length) {
-				// 	localStorage.submittedEntries = "";
-				// }
 			});
 		});
 		//document.location.href = 'index.html';
@@ -264,7 +257,7 @@ function onDeviceReady() {
 	//check and display network connection on submitted entries page.
 	setInterval(function() {
 		if (navigator.connection.type !== Connection.NONE) {
-			$("#connection").html("- Du &auml;r uppkopplad till internet!");
+			$("#connection").html("- Du &auml;r uppkopplad till internet.");
 			//$(".submitentry").removeAttr("disabled");
 		} else {
 			$("#connection").html("- Du har ingen anslutning till internet och kan inte skicka checklistor till servern.");
@@ -280,33 +273,10 @@ function onDeviceReady() {
 		var submittedEntryJson = $(this).serializeArray();
 		storePreviousSubmission(submittedEntryJson);
 		var submittedEntryString = $(this).serialize();
-		if (navigator.connection.type == Connection.NONE) {
-			alert("Du &auml;r inte uppkopplad. Checklistan kommer sparas i appen så får du ladda upp den senare!");
-			storeSubmittedEntry(submittedEntryString, formId);
-			//listSubmittedEntries();
-		} else {
 
-			storeSubmittedEntry(submittedEntryString, formId);
-			alert("Checklistan sparas nu i appen så får du ladda upp den senare.");
-			//uploadSubmittedEntries();
-			// $.ajax({
-			// 	type: 'POST',
-			// 	url: "http://fonstertitt.appspot.com/submit",
-			// 	data: submittedEntryString,
-			// 	crossDomain: true,
-			// 	cache: false
-			// }).done(function(data) {
-			// 	console.log(data);
-			// 	alert("Checklistan inskickad!");
-			// }).fail(function(jqXHR, textStatus, errorThrown) {
-			// 	console.log("upload failed");
-			// 	console.log(jqXHR);
-			// 	console.log(textStatus);
-			// 	console.log(errorThrown);
-			// 	console.log(jqXHR.responseText);
-			// 	alert("upload failed!");
-			// });
-		}
+		storeSubmittedEntry(submittedEntryString, formId);
+		alert("Checklistan sparad.");
+		
 		document.location.href = 'index.html';
 	});
 
@@ -346,7 +316,7 @@ function onDeviceReady() {
 	});
 
 	$("#remove-previous-submissions").click(function() {
-		alert("Nu kommer vi ta bort tidigare sparade checklistor?");
+		alert("Nu kommer vi ta bort tidigare sparade checklistor.");
 		localStorage.previousSubmissions = "";
 		if (localStorage.previousSubmissions) {
 			console.log("not empty");
