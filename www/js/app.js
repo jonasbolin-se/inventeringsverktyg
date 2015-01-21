@@ -62,13 +62,12 @@ function repopulateForm(previousSubmission) {
 	});
 }
 
+
 function displayChecklist(checklistJson, previousSubmission) {
-	console.log(previousSubmission);
+
+
 	var create_form = $("#myform").dform(checklistJson);
 	create_form.promise().done(function() {
-		$("input:file").after(function() {
-			return "<img id='image" + $(this).attr("id") + "'>";
-		});
 		if (checklistJson["name"]) {
 			console.log(checklistJson["name"]);
 			$("#checklist-name").html(checklistJson["name"]);
@@ -78,21 +77,10 @@ function displayChecklist(checklistJson, previousSubmission) {
 			// don't have a registered subscriber as attributes
 			return $("<h2>").dform('attr', options);
 		});
-		$.dform.addType("h1", function(options) {
-			// Return a new button element that has all options that
-			// don't have a registered subscriber as attributes
-			return $("<h1>").dform('attr', options);
-		});
 		$.dform.addType("textarea", function(options) {
 			// Return a new button element that has all options that
 			// don't have a registered subscriber as attributes
 			return $("<textarea>").dform('attr', options);
-		});
-		$.dform.addType('text', function(options) {
-			return $(this).wrap('<div >').attr('data-mini', 'true').parent();
-		});
-		$.dform.addType('file', function(options) {
-			return $(this).wrap('<div >').attr('data-mini', 'true').attr('accept', 'image/*').attr('capture', 'camera').parent();
 		});
 		$('#formpage').trigger('create'); //apply jquery mobile styling
 		$.mobile.navigate("#formpage"); //go to form page
@@ -101,6 +89,7 @@ function displayChecklist(checklistJson, previousSubmission) {
 		} else {
 			repopulateForm(previousSubmission);
 		}
+    
 	});
 }
 //polyfill to see if string begins with another string. 
@@ -281,11 +270,12 @@ function onDeviceReady() {
 	});
 
 	function updateChecklists() {
-		if (navigator.connection.type !== Connection.NONE) {
+		if (!localStorage.checklists || navigator.connection.type !== Connection.NONE) {
 			var requestAllForms = $.getJSON("http://fonstertitt.appspot.com/list-all-forms");
 			requestAllForms.promise().done(function(data) {
 				localStorage.removeItem("checklists");
 				localStorage.checklists = JSON.stringify(data);
+				
 				$.each(data, function(key, val) {
 					$("<li><a class='checklistObject' id='" + val.id + "'>" + val.name + "</a></li>").appendTo("#list-all-forms");
 				});
@@ -293,6 +283,7 @@ function onDeviceReady() {
 			});
 		} else {
 			var data = JSON.parse(localStorage.checklists);
+			$("#list-all-forms").remove();
 			$.each(data, function(key, val) {
 				$("<li><a class='checklistObject' id='" + val.id + "'>" + val.name + "</a></li>").appendTo("#list-all-forms");
 			});
