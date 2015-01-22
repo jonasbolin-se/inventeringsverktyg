@@ -65,13 +65,10 @@ function repopulateForm(previousSubmission) {
 
 function displayChecklist(checklistJson, previousSubmission) {
 
-
+	$.mobile.navigate("#formpage"); 
 	var create_form = $("#myform").dform(checklistJson);
 	create_form.promise().done(function() {
-		if (checklistJson["name"]) {
-			console.log(checklistJson["name"]);
-			$("#checklist-name").html(checklistJson["name"]);
-		}
+
 		$.dform.addType("h2", function(options) {
 			// Return a new button element that has all options that
 			// don't have a registered subscriber as attributes
@@ -83,11 +80,16 @@ function displayChecklist(checklistJson, previousSubmission) {
 			return $("<textarea>").dform('attr', options);
 		});
 		$('#formpage').trigger('create'); //apply jquery mobile styling
-		$.mobile.navigate("#formpage"); //go to form page
+		//go to form page
 		if (previousSubmission == undefined) {
 			//console.log("previousSubmission is undefined!");
 		} else {
 			repopulateForm(previousSubmission);
+		}
+
+		if (checklistJson["name"]) {
+			//console.log(checklistJson["name"]);
+			$("#checklist-name").html(checklistJson["name"]);
 		}
     
 	});
