@@ -271,6 +271,12 @@ function onDeviceReady() {
 		document.location.href = 'index.html';
 	});
 
+	var allChecklists;
+
+	if (localStorage.checklists){
+		allChecklists = JSON.parse(localStorage.checklists);
+	}
+
 	function updateChecklists() {
 		if (!localStorage.checklists || navigator.connection.type !== Connection.NONE) {
 			var requestAllForms = $.getJSON("http://fonstertitt.appspot.com/list-all-forms");
@@ -284,9 +290,8 @@ function onDeviceReady() {
 				$('#list-all-forms').listview().listview('refresh');
 			});
 		} else {
-			var data = JSON.parse(localStorage.checklists);
 			$("#list-all-forms").remove();
-			$.each(data, function(key, val) {
+			$.each(allChecklists, function(key, val) {
 				$("<li><a class='checklistObject' id='" + val.id + "'>" + val.name + "</a></li>").appendTo("#list-all-forms");
 			});
 			$('#list-all-forms').listview().listview('refresh');
@@ -324,7 +329,6 @@ function onDeviceReady() {
 	listSubmittedEntries();
 	listPreviousSubmissions();
 	$(document).on('click', '.checklistObject', function() {
-		var allChecklists = JSON.parse(localStorage.checklists);
 		var element_id = $(this).attr("id");
 		$.each(allChecklists, function(key, val) {
 			if (val.id == element_id) {
@@ -334,10 +338,10 @@ function onDeviceReady() {
 	});
 	$(document).on('click', '.previousSubmissionObject', function() {
 		var previousSubmissions = JSON.parse(localStorage.previousSubmissions);
-		var allChecklists = JSON.parse(localStorage.checklists);
+		var allChecklistObjects = JSON.parse(localStorage.checklists);
 		var element_id = this.id;
 		var element_timestamp = this.name;
-		$.each(allChecklists, function(key, val) {
+		$.each(allChecklistObjects, function(key, val) {
 			if (val.id == element_id) {
 				$.each(previousSubmissions, function(key2, value) {
 					if (value.timestamp == element_timestamp) {
