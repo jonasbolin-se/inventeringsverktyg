@@ -1,0 +1,618 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"list",
+				"list-submitted-entries"
+			],
+			[
+				"reload",
+				"reload-checklists"
+			],
+			[
+				"loca",
+				"location"
+			],
+			[
+				"ele",
+				"elementId"
+			],
+			[
+				"el",
+				"elementId"
+			],
+			[
+				"new",
+				"newInput"
+			],
+			[
+				"add",
+				"addHiddenElement"
+			],
+			[
+				"image",
+				"imageData"
+			],
+			[
+				"elem",
+				"elementId"
+			],
+			[
+				"imda",
+				"imageData"
+			],
+			[
+				"sc",
+				"SCRIPT	Tag"
+			],
+			[
+				"img",
+				"imgData"
+			],
+			[
+				"is",
+				"isOnline"
+			],
+			[
+				"get",
+				"getRequest"
+			],
+			[
+				"app",
+				"appspot"
+			],
+			[
+				"check",
+				"checklists"
+			],
+			[
+				"upda",
+				"updateChecklists"
+			],
+			[
+				"a",
+				"authenticate"
+			],
+			[
+				"logg",
+				"logged_in"
+			],
+			[
+				"in",
+				"initialize"
+			],
+			[
+				"class",
+				"classmethod"
+			],
+			[
+				"lisr",
+				"listSubmittedEntries"
+			],
+			[
+				"list-a",
+				"list-all-previous-submissions"
+			],
+			[
+				"delete",
+				"deleteSub"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"refre",
+				"refreshPage"
+			],
+			[
+				"rel",
+				"reload-app"
+			],
+			[
+				"upload",
+				"upload-submitted-entries"
+			],
+			[
+				"appen",
+				"appendTo"
+			],
+			[
+				"entr",
+				"entries_length"
+			],
+			[
+				"pro",
+				"promise"
+			],
+			[
+				"back",
+				"backwards"
+			],
+			[
+				"conte",
+				"content-body"
+			],
+			[
+				"elemen",
+				"element_id"
+			],
+			[
+				"inp",
+				"input_type"
+			],
+			[
+				"subm",
+				"submittedEntries"
+			],
+			[
+				"lc",
+				"localStorage"
+			],
+			[
+				"de",
+				"delete"
+			],
+			[
+				"form",
+				"formId"
+			],
+			[
+				"Sub",
+				"submittedEntries"
+			],
+			[
+				"pre",
+				"previousSubmission"
+			],
+			[
+				"un",
+				"undefined"
+			],
+			[
+				"previous",
+				"previousSubmission"
+			],
+			[
+				"all",
+				"allEntries"
+			],
+			[
+				"string",
+				"stringify"
+			],
+			[
+				"time",
+				"timestamp"
+			],
+			[
+				"post",
+				"postSubmission"
+			],
+			[
+				"submtted",
+				"submittedEntryString"
+			],
+			[
+				"sub",
+				"submittedEntries"
+			],
+			[
+				"submitted",
+				"submittedEntryString"
+			],
+			[
+				"submitt",
+				"submittedEntryJson"
+			],
+			[
+				"store",
+				"storePreviousSubmission"
+			],
+			[
+				"str",
+				"stringify"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"submi",
+				"submittedEntryJson"
+			],
+			[
+				"entry",
+				"entryJson"
+			],
+			[
+				"displ",
+				"displayChecklist"
+			],
+			[
+				"che",
+				"checklistJson"
+			],
+			[
+				"checl",
+				"checklist-object"
+			],
+			[
+				"local",
+				"localStorage"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"Form",
+				"FormComponents"
+			],
+			[
+				"ima",
+				"image_form"
+			],
+			[
+				"User",
+				"UserImageAdmin"
+			],
+			[
+				"En",
+				"Entry"
+			],
+			[
+				"L",
+				"LOGIN_REDIRECT_URL"
+			],
+			[
+				"cart",
+				"cart_id"
+			],
+			[
+				"Cart",
+				"CartItems"
+			],
+			[
+				"pri",
+				"product_variation"
+			],
+			[
+				"prod",
+				"product_variation"
+			],
+			[
+				"Var",
+				"VaritationManager"
+			],
+			[
+				"max",
+				"max_length"
+			],
+			[
+				"Pr",
+				"ProductImage"
+			],
+			[
+				"c",
+				"color"
+			],
+			[
+				"pr",
+				"products"
+			],
+			[
+				"def",
+				"default"
+			],
+			[
+				"em",
+				"empty_message"
+			],
+			[
+				"ca",
+				"cart_id"
+			],
+			[
+				"crate",
+				"create_form"
+			],
+			[
+				"get_",
+				"get_last_three"
+			],
+			[
+				"clas",
+				"classmethod"
+			],
+			[
+				"se",
+				"settings"
+			],
+			[
+				"url",
+				"urlpatterns"
+			],
+			[
+				"sav",
+				"save_it"
+			],
+			[
+				"s",
+				"SignUpForm"
+			],
+			[
+				"ren",
+				"render_to_response"
+			],
+			[
+				"h",
+				"h1	Tag"
+			],
+			[
+				"S",
+				"SignUpAdmin"
+			],
+			[
+				"ban",
+				"background"
+			],
+			[
+				"Image",
+				"ImageDraw"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 19012,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/jonasbolin/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/jonasbolin/Development/vbk/www/js/dform.js",
+		"/Users/jonasbolin/Dropbox/App Engine Development/challengebuilder/templates/challenge.html",
+		"/Users/jonasbolin/Development/vbk/www/js/index.js",
+		"/Users/jonasbolin/Development/vbk/www/js/cordova.js",
+		"/Users/jonasbolin/Development/workshop/www/index.html",
+		"/Users/jonasbolin/Dropbox/App Engine Development/fonstertitt/templates/signup-form.html",
+		"/Users/jonasbolin/Downloads/hw4/blog.py",
+		"/Users/jonasbolin/Dropbox/App Engine Development/fonstertitt/templates/formbuilder.html",
+		"/Users/jonasbolin/Dropbox/App Engine Development/fonstertitt/css/jquery.formbuilder.css",
+		"/Users/jonasbolin/Dropbox/App Engine Development/fonstertitt/templates/base.html",
+		"/Users/jonasbolin/Dropbox/App Engine Development/fonstertitt/js/jquery.formbuilder.js",
+		"/Users/jonasbolin/Dropbox/App Engine Development/fonstertitt/templates/forms.html",
+		"/Users/jonasbolin/Dropbox/App Engine Development/fonstertitt/templates/front.html",
+		"/Users/jonasbolin/Dropbox/App Engine Development/fonstertitt/js/pretty.js",
+		"/Users/jonasbolin/Dropbox/App Engine Development/fonstertitt/js/megapix-image.js",
+		"/Users/jonasbolin/Dropbox/App Engine Development/fonstertitt/templates/surveys.html",
+		"/Users/jonasbolin/Dropbox/App Engine Development/fonstertitt/templates/mainfile2.html",
+		"/Users/jonasbolin/Dropbox/App Engine Development/fonstertitt/templates/goback.html",
+		"/Users/jonasbolin/python-virtualenvironments/tryapi/src/tryapi/settings.py",
+		"/Users/jonasbolin/python-virtualenvironments/tryapi/src/testapp/profile.html",
+		"/Users/jonasbolin/python-virtualenvironments/tryapi/lib/python2.7/site-packages/allauth/urls.py",
+		"/Users/jonasbolin/python-virtualenvironments/seven/src/seven/urls.py",
+		"/Users/jonasbolin/python-virtualenvironments/seven/seven/seven/settings.py",
+		"/Users/jonasbolin/python-virtualenvironments/seven/seven/seven/settings.pyc",
+		"/Users/jonasbolin/python-virtualenvironments/ecommerce/ecommerce/carts/views.py",
+		"/Users/jonasbolin/python-virtualenvironments/ecommerce/ecommerce/templates/cart/view.html",
+		"/Users/jonasbolin/python-virtualenvironments/ecommerce/ecommerce/orders/models.py",
+		"/Users/jonasbolin/python-virtualenvironments/ecommerce/ecommerce/carts/models.py",
+		"/Users/jonasbolin/python-virtualenvironments/ecommerce/ecommerce/ecommerce/urls.py",
+		"/Users/jonasbolin/python-virtualenvironments/ecommerce/ecommerce/products/models.py",
+		"/Users/jonasbolin/python-virtualenvironments/ecommerce/ecommerce/products/admin.py",
+		"/Users/jonasbolin/python-virtualenvironments/ecommerce/ecommerce/templates/products/home.html",
+		"/Users/jonasbolin/python-virtualenvironments/ecommerce/ecommerce/templates/products/result.html",
+		"/Users/jonasbolin/python-virtualenvironments/ecommerce/ecommerce/ecommerce/settings.py",
+		"/Users/jonasbolin/python-virtualenvironments/ecommerce/ecommerce/orders/admin.py",
+		"/Users/jonasbolin/python-virtualenvironments/ecommerce/ecommerce/orders/views.py",
+		"/Users/jonasbolin/python-virtualenvironments/ecommerce/ecommerce/templates/navbar.html",
+		"/Users/jonasbolin/python-virtualenvironments/ecommerce/ecommerce/carts/admin.py",
+		"/Users/jonasbolin/python-virtualenvironments/ecommerce/ecommerce/templates/apply.py",
+		"/Users/jonasbolin/python-virtualenvironments/ecommerce/ecommerce/templates/products/single.html",
+		"/Users/jonasbolin/python-virtualenvironments/ecommerce/ecommerce/products/views.py",
+		"/Users/jonasbolin/Dropbox/App Engine Development/fonstertitt/templates/front2.html",
+		"/Users/jonasbolin/python-virtualenvironments/django-play/mvp_landing/db.sqlite3",
+		"/Users/jonasbolin/Dropbox/App Engine Development/email-marketing-generator/templates/spritecow.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"missl",
+			"connec",
+			"600",
+			"7200",
+			"Å",
+			"ä",
+			"\")\n",
+			"self.user",
+			"access",
+			"done",
+			"signup",
+			"builderh",
+			"el",
+			"isonline",
+			"index",
+			"reloadPa",
+			"submit",
+			"debug",
+			"log(",
+			"log",
+			"logging",
+			"ä",
+			"          </td>\n        </tr>\n      </table>",
+			"class=\"label\"",
+			"login",
+			"init",
+			"controlBox",
+			"control-box",
+			"push",
+			"generate_frmb",
+			"delete",
+			"submitexpa",
+			"empty",
+			";\n",
+			"mainfile",
+			"allforms",
+			"\",\n",
+			"comment",
+			")\n",
+			"comment",
+			"loadform",
+			"formhandler"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 19012,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								487,
+								487
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1855.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

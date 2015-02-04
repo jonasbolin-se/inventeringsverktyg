@@ -12,4 +12,11 @@
 /Users/jonasbolin/Development/vbk/platforms/android/ant-build/classes/se/vbk/inventeringsverktyg/R$string.class \
 /Users/jonasbolin/Development/vbk/platforms/android/ant-build/classes/se/vbk/inventeringsverktyg/R$xml.class \
 /Users/jonasbolin/Development/vbk/platforms/android/ant-build/classes/se/vbk/inventeringsverktyg/R.class \
+/Users/jonasbolin/Development/vbk/platforms/android/ant-build/classes/se/vbk/verktyg/BuildConfig.class \
+/Users/jonasbolin/Development/vbk/platforms/android/ant-build/classes/se/vbk/verktyg/CordovaApp.class \
+/Users/jonasbolin/Development/vbk/platforms/android/ant-build/classes/se/vbk/verktyg/R$attr.class \
+/Users/jonasbolin/Development/vbk/platforms/android/ant-build/classes/se/vbk/verktyg/R$drawable.class \
+/Users/jonasbolin/Development/vbk/platforms/android/ant-build/classes/se/vbk/verktyg/R$string.class \
+/Users/jonasbolin/Development/vbk/platforms/android/ant-build/classes/se/vbk/verktyg/R$xml.class \
+/Users/jonasbolin/Development/vbk/platforms/android/ant-build/classes/se/vbk/verktyg/R.class \
 /Users/jonasbolin/Development/vbk/platforms/android/ant-build/dexedLibs/classes-c71ba35bcf988f4fdda563fdac2c1dcc.jar \

@@ -278,6 +278,9 @@ function onDeviceReady() {
 	}
 
 	function updateChecklists() {
+		if (allChecklists != undefined){
+			alert("vi har en variabel");
+		}
 		if (!localStorage.checklists || navigator.connection.type !== Connection.NONE) {
 			var requestAllForms = $.getJSON("http://fonstertitt.appspot.com/list-all-forms");
 			requestAllForms.promise().done(function(data) {

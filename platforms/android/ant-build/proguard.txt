@@ -1,3 +1,3 @@
 # view AndroidManifest.xml #generated:9
--keep class se.vbk.inventeringsverktyg.CordovaApp { <init>(...); }
+-keep class se.vbk.verktyg.CordovaApp { <init>(...); }
 
